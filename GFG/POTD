@@ -1,0 +1,16 @@
+Two Equal Sum Subarrays // 23/04/2026
+
+bool canSplit(vector<int>& arr) {
+        // code here
+       int n = arr.size();
+       int totalSum = 0;
+       int leftSum = 0;
+       for(int i = 0 ; i < n ; i++) totalSum += arr[i];
+       
+       for(int i = 0; i <= n - 2; i++){
+           leftSum += arr[i];
+           if(leftSum == totalSum - leftSum) return true;
+       } 
+       return false;
+       
+    }
